@@ -20,4 +20,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('admin/dashboard', [HomeController::class, 'index']);
+Route::get('admin/dashboard', [HomeController::class, 'adminIndex'])->name('admin.dashboard');
+
+// Add doctor panel routes
+Route::get('doctor/dashboard', [HomeController::class, 'doctorIndex'])->name('doctor.dashboard');
+
+// Add patient panel routes
+Route::get('patient/dashboard', [HomeController::class, 'patientIndex'])->name('patient.dashboard');
